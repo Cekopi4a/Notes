@@ -16,20 +16,20 @@ function All_Notes () {
           });
       }, []);
 
-      const deleteNote = async (id) => {
-            try {
-              const response = await fetch(`http://localhost:5050/deleteNote/${id}`, {
-                method: 'DELETE',
-              });
+      // const deleteNote = async (id) => {
+      //       try {
+      //         const response = await fetch(`http://localhost:5050/deleteNote/${id}`, {
+      //           method: 'DELETE',
+      //         });
           
-              if (!response.ok) {
-                throw new Error('Network response was not ok');
-              }
-              setNotes(notes.filter(note => note.id !== id));
-            } catch (error) {
-              console.error('Error:', error);
-            }
-          };
+      //         if (!response.ok) {
+      //           throw new Error('Network response was not ok');
+      //         }
+      //         setNotes(notes.filter(note => note.id !== id));
+      //       } catch (error) {
+      //         console.error('Error:', error);
+      //       }
+      //     };
 
         //   const editNote = async (id,updateContent) => {
         //     const note = { content:newNote};
@@ -58,8 +58,8 @@ function All_Notes () {
          <ul>
        {notes.map((note) => (
          <li key={note.id}>{note.content}
-         <button onClick={deleteNote(note.id)}>Delete Note</button>
-         <button onClick={editNote(note.id,updateContent)}>Edit Note</button>
+         <button onClick>Delete Note</button>
+         <button onClick>Edit Note</button>
          </li>
      ))}
   </ul>
